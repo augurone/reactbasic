@@ -17,8 +17,6 @@ const Feed = () => {
     const [posts, setPosts] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
     const handlePostSubmit = (formData) => {
-        event.preventDefault();
-
         const newPost = {
             user: {
                 img: currentUser.img,
