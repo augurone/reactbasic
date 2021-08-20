@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import UserImg from './UserImg';
 
@@ -8,23 +8,35 @@ const CommentsForm = ({
         img = '',
         name = '',
     } = {},
-}) => (
-    <section className="postMachine-Form--comment u-flexContainer">
-        <form onSubmit={handleSubmit}>
-            <UserImg img={img} name={name} />
-            <textarea
-                placeholder="What is a question you have for the creative?"
-                name="comment" />
-            <button
-                aria-label="Post Comment"
-                className="postMachine-Button--post"
-                name="post"
-                type="submit">
-                Post A Comment
-            </button>
-        </form>
-    </section>
-);
+}) => {
+    const formRef = useRef();
+
+    const localSubmit = (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(formRef.current);
+
+        handleSubmit(formData);
+    };
+
+    return (
+        <section className="postMachine-Form--comment u-flexContainer">
+            <form onSubmit={localSubmit} ref={formRef}>
+                <UserImg img={img} name={name} />
+                <textarea
+                    placeholder="What is a question you have for the creative?"
+                    name="comment" />
+                <button
+                    aria-label="Post Comment"
+                    className="postMachine-Button--post"
+                    name="post"
+                    type="submit">
+                    Post A Comment
+                </button>
+            </form>
+        </section>
+    );
+};
 
 export default CommentsForm;
 

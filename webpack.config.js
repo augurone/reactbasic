@@ -32,7 +32,7 @@ const webpackPlugins = [
     }),
     // timestampPlugin,
     new webpack.BannerPlugin({
-        banner: `Behance React built ${new Date()}`,
+        banner: `React Basic built ${new Date()}`,
     }),
 ];
 
@@ -40,7 +40,7 @@ module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
     output: { path: path.join(__dirname, 'build'), filename: 'index.bundle.js' },
     mode: process.env.NODE_ENV || 'development',
-    devServer: { contentBase: path.join(__dirname, 'src') },
+    devServer: { static: path.join(__dirname, 'src') },
     resolve: {
         symlinks: false,
         /**

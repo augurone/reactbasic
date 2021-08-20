@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 import CommentsForm from './CommentsForm';
 import Comments from './Comments';
 
@@ -17,26 +16,18 @@ const userData = [
 const Feed = () => {
     const [posts, setPosts] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
-    const handlePostSubmit = (event = {}) => {
+    const formRef = useRef;
+    const handlePostSubmit = (formData) => {
         event.preventDefault();
 
-        const {
-            target: form = {},
-        } = event;
-        const {
-            children = [],
-        } = form;
-        const { value = '' } = children[1];
         const newPost = {
             user: {
                 img: currentUser.img,
                 name: currentUser.name,
             },
             timeStamp: Date.now(),
-            text: value,
+            text: formData.get('comment'),
         };
-
-        children[1].value = '';
 
         setPosts((lastState) => [].concat(lastState, newPost));
     };
@@ -51,7 +42,8 @@ const Feed = () => {
                 <h2 className="u-flexAlignSelf--start">Comments</h2>
                 <CommentsForm
                     user={currentUser}
-                    handleSubmit={handlePostSubmit} />
+                    handleSubmit={handlePostSubmit}
+                    ref={formRef} />
                 <Comments posts={posts} />
             </div>
         </div>
@@ -59,7 +51,3 @@ const Feed = () => {
 };
 
 export default Feed;
-//
-// Feed.propTypes = {
-//     posts: PropTypes.arrayOf(PropTypes.object).isRequired,
-// };
