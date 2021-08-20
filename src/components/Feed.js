@@ -16,7 +16,6 @@ const userData = [
 const Feed = () => {
     const [posts, setPosts] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
-    const formRef = useRef;
     const handlePostSubmit = (formData) => {
         event.preventDefault();
 
@@ -42,8 +41,7 @@ const Feed = () => {
                 <h2 className="u-flexAlignSelf--start">Comments</h2>
                 <CommentsForm
                     user={currentUser}
-                    handleSubmit={handlePostSubmit}
-                    ref={formRef} />
+                    handleSubmit={handlePostSubmit} />
                 <Comments posts={posts} />
             </div>
         </div>

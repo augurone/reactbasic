@@ -17,6 +17,8 @@ const CommentsForm = ({
         const formData = new FormData(formRef.current);
 
         handleSubmit(formData);
+
+        formRef.current.reset();
     };
 
     return (
