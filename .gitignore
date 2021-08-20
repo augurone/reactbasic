@@ -16,10 +16,9 @@ bin
 .repo
 package-lock.json
 
-build/
+
 
 # Front-End Ignores
-app/jcr_root/apps/northstar/clientlibs/base/jquery/jquery.min.js
 stats.html
 npm-debug.log*
 node_modules
@@ -34,6 +33,7 @@ coverage
 .scannerwork
 
 # Built JS and CSS files
+build/
 dist
 *.code-workspace
 
