@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './app.less';
-import BehanceInterview from './components/BehanceInterview';
+import AppWrapper from './components/AppWrapper';
 
-ReactDOM.render(<BehanceInterview />, document.getElementById('root'));
+ReactDOM.render(<AppWrapper />, document.getElementById('root'));

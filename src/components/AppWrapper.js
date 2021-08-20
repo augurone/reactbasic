@@ -1,8 +1,8 @@
 import React from 'react';
 import Feed from './Feed';
 
-const BehanceInterview = () => (
+const AppWrapper = () => (
     <Feed />
 );
 
-export default BehanceInterview;
+export default AppWrapper;
