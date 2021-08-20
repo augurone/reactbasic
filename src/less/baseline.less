@@ -1,0 +1,48 @@
+body {
+    background-color: #fff;
+    font: 16px Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 18;
+    font-weight: bold;
+}
+
+// An instance where code style bites us
+// https://stackoverflow.com/questions/5721966/webkit-margin-adds-unwanted-margin-on-texts
+figure,
+ul,
+menu,
+dir {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+}
+
+*:not(input):not(select),
+*:before,
+*:after {
+    box-sizing: border-box;
+    border: 0 none;
+}
+
+input,
+textarea,
+::placeholder {
+    font: 14px Helvetica, Arial, sans-serif;
+}
+
+// Accessiblity
+.screenReaderOnly {
+    clip: rect(1px 1px 1px 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: -500rem;
+    white-space: nowrap;
+    width: 1px;
+}

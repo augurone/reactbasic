@@ -1,0 +1,40 @@
+atlassian-ide-plugin.xml
+target
+.idea
+.vscode
+.classpath
+.project
+.settings
+*.iml
+*.ipr
+*.iws
+bin
+.vlt
+.DS_Store
+.vlt-sync-config.properties
+.vlt-sync.log
+.repo
+package-lock.json
+
+build/
+
+# Front-End Ignores
+app/jcr_root/apps/northstar/clientlibs/base/jquery/jquery.min.js
+stats.html
+npm-debug.log*
+node_modules
+node
+app/export/*/react
+app/export/*/theme
+
+# Jest test coverage files
+coverage
+
+# Sonart Cube task reports
+.scannerwork
+
+# Built JS and CSS files
+dist
+*.code-workspace
+
+.history

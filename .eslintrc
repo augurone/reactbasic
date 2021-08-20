@@ -1,0 +1,75 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb",
+    ],
+    "plugins": [
+        "babel",
+        "react-hooks"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "globals": {
+        "document": true,
+        "window": true,
+        "Element": true,
+        "HTMLElement": true,
+        "MutationObserver": true,
+        "$": true,
+        "jQuery": true,
+        "digitalData": true,
+        "dexter": true,
+        "_satellite": true,
+        "__satelliteLoadedPromise": true
+    },
+    "settings": {
+        "react": {
+            "version": "16.4"
+        },
+        "import/resolver": {
+            "alias" : [
+                ["~root", "./"],
+            ]
+        }
+    },
+    "rules": {
+        "indent": ["error", 4, {"SwitchCase": 1}],
+        "no-param-reassign": ["error", { "props": false }],
+        "react/no-unknown-property": ["warn", {"ignore" : ["for", "hreflang"]}],
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "react/jsx-closing-bracket-location": [1, {"selfClosing": "after-props", "nonEmpty": "after-props"}],
+        "react/jsx-filename-extension": "off",
+        "class-methods-use-this": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "jsx-a11y/label-has-for": "off",
+        "function-paren-newline": ["error", "consistent"],
+        "import/prefer-default-export": "off",
+        "prefer-destructuring": "off",
+        "no-console": "warn",
+        "no-restricted-globals": "off",
+        "no-undef": "off",
+        "constructor-super": "off",
+        "no-underscore-dangle": ["error", { "allow": ["_satellite"] }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "off"
+    },
+    "ignorePatterns": [
+        "/jcr_root/apps/northstar/clientlibs/base/adi/*",
+        "/jcr_root/apps/northstar/clientlibs/base/author/*",
+        "/jcr_root/apps/northstar/clientlibs/base/dexterAuthor/*",
+        "/jcr_root/apps/northstar/clientlibs/base/dexterPublishOverlay/*",
+        "/jcr_root/apps/northstar/clientlibs/base/editor/*"
+    ]
+}

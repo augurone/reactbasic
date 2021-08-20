@@ -1,0 +1,148 @@
+.postMachine {
+    &-Feed {
+        background-color: #fcfcfc;
+        padding: 114px;
+        margin: 0 auto;
+        max-width: 983px;
+
+        &--inner {
+            background-color: #fff;
+            max-width: 771px;
+            padding: 29px;
+            width: 100%;
+
+            h2 {
+                margin-bottom: 32px;
+            }
+        }
+    }
+
+    &-Img {
+        &--user {
+            background-color: grey;
+            grid-area: img;
+            padding: 0;
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    &-Form {
+        &--comment {
+            min-width: 100%;
+
+            form {
+                display: grid;
+                grid-gap: 16px;
+                grid-template-columns: 50px 1fr 1fr minmax(min-content, max-content);
+                grid-template-areas:
+                    "img main main main"
+                    ". . . button";
+                min-width: 100%;
+                box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.15);
+                padding-bottom: 32px;
+
+                @media screen and (max-width: 768px) {
+                    grid-template-columns: 50px 1fr minmax(1fr, max-content);
+                    grid-template-areas:
+                        "img main main"
+                        ". . button";
+                }
+
+                textarea {
+                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.85);
+                    grid-area: main;
+                    min-width: 100%;
+                    min-height: 111px;
+                    padding: 16px;
+                    resize: none;
+                }
+
+                button {
+                    grid-area: button;
+                    background-color: #1473e6;
+                    border-color: #1473e6;
+                    color: #fff;
+                    border-width: 2px;
+                    border-style: solid;
+                    border-radius: 16px;
+                    min-height: 32px;
+                    height: auto;
+                    min-width: 72px;
+                    padding: 4px 14px;
+                    padding-bottom: 5px;
+                    padding-top: 3px;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    &-Post {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: 50px 1fr;
+        grid-template-areas: "img content";
+        margin: 16px 0;
+
+        &:first-of-type {
+            margin-top: 32px;
+        }
+
+        &--content {
+            grid-area: content;
+            min-width: 100%;
+        }
+
+        .postMachine {
+            &-Img {
+                &--user {
+                    grid-area: img;
+                }
+            }
+
+            &-HeaderGroup {
+                align-content: center;
+                align-items: center;
+                display: flex;
+
+                h3 {
+                    font-weight: 700;
+                    font-size: 14px;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .u-timeStamp {
+                    align-content: center;
+                    display: flex;
+                    font-size: 13px;
+                    font-weight: 400;
+                    justify-content: flex-start;
+                    padding: 0;
+                    margin: 0;
+
+                    &:before {
+                        content: '\25A0';
+                        display: inline;
+                        font-size: 10px;
+                        margin: 0 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-PostText {
+        color: #696969;
+        font-size: 15px;
+        margin-top: 8px;
+    }
+
+    &-HeaderGroup {
+        display: flex;
+        width: 100%;
+    }
+}
