@@ -16,18 +16,22 @@ const CommentsForm = ({
                 } = {},
                 timeStamp = '',
                 text = '',
-            }) => (
-                <article className="postMachine-Post" key={Math.random()}>
-                    <UserImg img={img} name={name} />
-                    <div className="postMachine-Post--content">
-                        <section className="postMachine-HeaderGroup">
-                            <h3>{name}</h3>
-                            <span className="u-timeStamp">{timeStamp}</span>
-                        </section>
-                        <section className="postMachine-PostText">{text}</section>
-                    </div>
-                </article>
-            ))}
+            }) => {
+                const readableDate = new Date(timeStamp).toString();
+
+                return (
+                    <article className="postMachine-Post" key={Math.random()}>
+                        <UserImg img={img} name={name} />
+                        <div className="postMachine-Post--content">
+                            <section className="postMachine-HeaderGroup">
+                                <h3>{name}</h3>
+                                <span className="u-timeStamp">{readableDate}</span>
+                            </section>
+                            <section className="postMachine-PostText">{text}</section>
+                        </div>
+                    </article>
+                );
+            })}
         </section>
     );
 };

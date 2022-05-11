@@ -5,7 +5,7 @@ import Comments from './Comments';
 const userData = [
     {
         name: 'Chad Augur',
-        img: 'https://scontent-hou1-1.xx.fbcdn.net/v/t1.6435-9/197295289_10158770256563371_4099244207924225096_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=BGlf9w6XuzAAX_KBdtQ&_nc_oc=AQkKVwWmIiM-jhSoc3O2sXhSpSyGmBkPWP72XIR-KiasvJgsld3EAbsEUrJvoHporJ4&_nc_ht=scontent-hou1-1.xx&oh=ae9b66d9d95f1089fa5422332366cc68&oe=61425936',
+        img: 'https://avatars.githubusercontent.com/u/4624449?s=400&u=f5eb7c10761bba043e459d5dc89b57592bd29d91&v=4',
     },
     {
         name: 'Billie Austin',

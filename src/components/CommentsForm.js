@@ -26,7 +26,7 @@ const CommentsForm = ({
             <form onSubmit={localSubmit} ref={formRef}>
                 <UserImg img={img} name={name} />
                 <textarea
-                    placeholder="What is a question you have for the creative?"
+                    placeholder="What is a question you have?"
                     name="comment" />
                 <button
                     aria-label="Post Comment"
