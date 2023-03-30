@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import UserImg from './UserImg';
+import UserImg from './UsrImg';
 
 const CommentsForm = ({
     handleSubmit,
@@ -10,7 +10,6 @@ const CommentsForm = ({
     } = {},
 }) => {
     const formRef = useRef();
-
     const localSubmit = (event) => {
         event.preventDefault();
 
@@ -22,21 +21,19 @@ const CommentsForm = ({
     };
 
     return (
-        <section className="postMachine-Form--comment u-flexContainer">
-            <form onSubmit={localSubmit} ref={formRef}>
-                <UserImg img={img} name={name} />
-                <textarea
-                    placeholder="What is a question you have?"
-                    name="comment" />
-                <button
-                    aria-label="Post Comment"
-                    className="postMachine-Button--post"
-                    name="post"
-                    type="submit">
-                    Post A Comment
-                </button>
-            </form>
-        </section>
+        <form className="postMachine-Comment postMachine-Comment--form u-flexContainer" onSubmit={localSubmit} ref={formRef}>
+            <UserImg img={img} name={name} />
+            <textarea
+                placeholder="What is a question you have?"
+                name="comment" />
+            <button
+                aria-label="Post Comment"
+                className="postMachine-Button--post"
+                name="post"
+                type="submit">
+                Post A Comment
+            </button>
+        </form>
     );
 };
 

@@ -1,11 +1,12 @@
 {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "extends": [
         "airbnb",
+        "react-app"
     ],
     "plugins": [
-        "babel",
-        "react-hooks"
+        "import",
+        "react"
     ],
     "env": {
         "browser": true,
@@ -24,52 +25,44 @@
         "window": true,
         "Element": true,
         "HTMLElement": true,
-        "MutationObserver": true,
-        "$": true,
-        "jQuery": true,
-        "digitalData": true,
-        "dexter": true,
-        "_satellite": true,
-        "__satelliteLoadedPromise": true
+        "MutationObserver": true
+    },
+    "root": true,
+    "rules": {
+        "function-paren-newline": ["error","consistent"],
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "import/prefer-default-export": "off",
+        "import/no-unresolved": ["error", {  "caseSensitive": false  }],
+        "jsx-a11y/anchor-is-valid": "off",
+        "jsx-a11y/label-has-for": "off",
+        "no-console": "warn",
+        "no-param-reassign": ["error", { "props": false }],
+        "no-restricted-globals": "warn",
+        "no-undef": "off",
+        "prefer-destructuring": "warn",
+        "react-hooks/exhaustive-deps": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react/jsx-closing-bracket-location": [1,{"selfClosing": "after-props","nonEmpty": "after-props"}],
+        "react/jsx-indent-props": ["error", 4],
+        "react/function-component-definition": ["error", {
+            "namedComponents":  "arrow-function",
+            "unnamedComponents": "arrow-function"
+        }],
+        "react/jsx-indent": ["error", 4],
+        "react/no-unknown-property": ["warn", { "ignore": [ "for", "hreflang"]}],
+        "react/react-in-jsx-scope": "off"
     },
     "settings": {
         "react": {
-            "version": "16.4"
+            "version": "18.2.0"
         },
         "import/resolver": {
-            "alias" : [
-                ["~root", "./"],
-            ]
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
         }
-    },
-    "rules": {
-        "indent": ["error", 4, {"SwitchCase": 1}],
-        "no-param-reassign": ["error", { "props": false }],
-        "react/no-unknown-property": ["warn", {"ignore" : ["for", "hreflang"]}],
-        "react/react-in-jsx-scope": "off",
-        "react/jsx-indent": ["error", 4],
-        "react/jsx-indent-props": ["error", 4],
-        "react/jsx-closing-bracket-location": [1, {"selfClosing": "after-props", "nonEmpty": "after-props"}],
-        "react/jsx-filename-extension": "off",
-        "class-methods-use-this": "off",
-        "jsx-a11y/anchor-is-valid": "off",
-        "jsx-a11y/label-has-for": "off",
-        "function-paren-newline": ["error", "consistent"],
-        "import/prefer-default-export": "off",
-        "prefer-destructuring": "off",
-        "no-console": "warn",
-        "no-restricted-globals": "off",
-        "no-undef": "off",
-        "constructor-super": "off",
-        "no-underscore-dangle": ["error", { "allow": ["_satellite"] }],
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "off"
-    },
-    "ignorePatterns": [
-        "/jcr_root/apps/northstar/clientlibs/base/adi/*",
-        "/jcr_root/apps/northstar/clientlibs/base/author/*",
-        "/jcr_root/apps/northstar/clientlibs/base/dexterAuthor/*",
-        "/jcr_root/apps/northstar/clientlibs/base/dexterPublishOverlay/*",
-        "/jcr_root/apps/northstar/clientlibs/base/editor/*"
-    ]
+    }
 }

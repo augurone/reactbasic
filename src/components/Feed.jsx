@@ -9,7 +9,7 @@ const userData = [
     },
     {
         name: 'Billie Austin',
-        img: 'https://scontent-hou1-1.xx.fbcdn.net/v/t1.6435-9/211640909_588481642513436_807568501449669370_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Vm9_MTJagl8AX9n2-Sq&_nc_ht=scontent-hou1-1.xx&oh=afc2460a51fdfa61a3c825bfa87691d4&oe=6144BED4',
+        img: 'https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/241086093_626259035402363_2328464502435350005_n.jpg',
     },
 ];
 
@@ -17,13 +17,17 @@ const Feed = () => {
     const [posts, setPosts] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
     const handlePostSubmit = (formData) => {
+        const comment = formData.get('comment');
+
+        if (!comment) return;
+
         const newPost = {
             user: {
                 img: currentUser.img,
                 name: currentUser.name,
             },
             timeStamp: Date.now(),
-            text: formData.get('comment'),
+            text: comment,
         };
 
         setPosts((lastState) => [].concat(lastState, newPost));
@@ -34,15 +38,11 @@ const Feed = () => {
     }, []);
 
     return (
-        <div className="postMachine-Feed u-flexContainer u-flexCentered">
-            <div className="postMachine-Feed--inner u-flexContainer u-flexCentered u-flexDirection--column">
-                <h2 className="u-flexAlignSelf--start">Comments</h2>
-                <CommentsForm
-                    user={currentUser}
-                    handleSubmit={handlePostSubmit} />
-                <Comments posts={posts} />
-            </div>
-        </div>
+        <section className="postMachine-Feed u-flexContainer u-flexCentered  u-flexDirection--column">
+            <h2 className="u-flexAlignSelf--start">Comments</h2>
+            <CommentsForm user={currentUser} handleSubmit={handlePostSubmit} />
+            <Comments posts={posts} />
+        </section>
     );
 };
 

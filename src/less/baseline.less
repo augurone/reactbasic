@@ -10,8 +10,10 @@ h2 {
     font-weight: bold;
 }
 
-// An instance where code style bites us
-// https://stackoverflow.com/questions/5721966/webkit-margin-adds-unwanted-margin-on-texts
+/*
+An instance where code style bites us
+https://stackoverflow.com/questions/5721966/webkit-margin-adds-unwanted-margin-on-texts
+*/
 figure,
 ul,
 menu,
@@ -22,7 +24,7 @@ dir {
     -webkit-margin-end: 0;
 }
 
-*:not(input):not(select),
+*:not(input, select),
 *:before,
 *:after {
     box-sizing: border-box;
@@ -35,7 +37,7 @@ textarea,
     font: 14px Helvetica, Arial, sans-serif;
 }
 
-// Accessiblity
+/* Accessiblity */
 .screenReaderOnly {
     clip: rect(1px 1px 1px 1px);
     height: 1px;
